@@ -1,0 +1,78 @@
+/* src/components/Login.css */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  margin-bottom: 10px;
+  background-color: white; /* Change the background color to white */
+  height: 100vh; /* Ensure the container takes the full height of the viewport */
+}
+
+.login-image {
+  flex: 1;
+  max-width: 500px;
+  margin-right: 20px;
+}
+
+.login-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.form-wrap {
+  flex: 1;
+  margin: auto;
+  max-width: 500px;
+  padding: 20px;
+  background-color: #f0f0f0; /* Change the form background color */
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+h1 span {
+  color: #ff6347; /* Example highlight color */
+}
+
+h6 {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.form-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #ff6347; /* Example button color */
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.form-btn:hover {
+  background-color: #ff4500; /* Example hover color */
+}
+
+.signup {
+  color: #ff6347; /* Example link color */
+}
+
+.signup:hover {
+  text-decoration: underline;
+}

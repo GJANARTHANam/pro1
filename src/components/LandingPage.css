@@ -1,0 +1,188 @@
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  background-image: url('J:/3rdr react project/pro1/public/codioful-formerly-gradienta-LeG68PrXA6Y-unsplash.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.navbar {
+  background-color: #333;
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+
+.landing-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+}
+
+.hero {
+  background: url('J:/3rdr react project/pro1/public/pexels-camcasey-1687093.jpg') center/cover no-repeat;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+  transition: transform 1.0s cubic-bezier(0.55, 0.3, 0.55, 3);
+}
+
+.hero:hover {
+  transform: scale(1.2);
+}
+
+.hero h1 {
+  font-size: 3em;
+  margin: 0;
+}
+
+.hero p {
+  font-size: 1.2em;
+}
+
+.section {
+  padding: 60px 20px;
+}
+
+.section h2 {
+  font-size: 2.5em;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.section p {
+  font-size: 1.1em;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.photo-slideshow .carousel .slide img {
+  height: 400px;
+  object-fit: cover;
+}
+
+.carousel .slide img {
+  border-radius: 10px;
+}
+
+.achievement-grid,
+.partner-grid,
+.testimonial-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.achievement,
+.partner,
+.testimonial {
+  flex: 1 1 30%;
+  max-width: 30%;
+  padding: 15px;
+  text-align: center;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.achievement:hover,
+.partner:hover,
+.testimonial:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.achievement img,
+.partner img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.partner img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.testimonial img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.achievement p,
+.partner p,
+.testimonial p {
+  padding: 10px;
+  font-size: 1.1em;
+  background-color: #3498db;
+  color: white;
+  margin: 0;
+}
+
+.cta {
+  background-color: #ff9800;
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.cta h2 {
+  margin: 0 0 20px;
+}
+
+.cta button {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.cta button:hover {
+  background-color: #555;
+}
+
+@media (max-width: 768px) {
+  .achievement-grid,
+  .partner-grid,
+  .testimonial-grid {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .achievement,
+  .partner,
+  .testimonial {
+    width: 100%;
+  }
+
+  .carousel .slide img {
+    max-height: 300px;
+  }
+
+  .intro h1 {
+    font-size: 2em;
+  }
+
+  .intro p {
+    font-size: 1em;
+  }
+}

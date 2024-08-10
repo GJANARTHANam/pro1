@@ -1,0 +1,172 @@
+/* src/components/AboutUs.css */
+
+.about-us-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 60px;
+    background: linear-gradient(to right, #f0f4f8, #e2e8f0);
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 1200px;
+  }
+  
+  .about-us-image {
+    flex: 1;
+    max-width: 50%;
+    padding-right: 20px;
+  }
+  
+  .about-us-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+  }
+  
+  .about-us-image img:hover {
+    transform: scale(1.05);
+  }
+  
+  .about-us-text {
+    flex: 1;
+    max-width: 50%;
+  }
+  
+  .about-us-text h1 {
+    font-size: 3em;
+    color: #2d3748;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  .about-us-text p {
+    font-size: 1.2em;
+    line-height: 1.8em;
+    color: #4a5568;
+    margin-bottom: 20px;
+    padding-right: 20px;
+  }
+  
+  .about-us-text p:last-of-type {
+    margin-bottom: 0;
+  }
+  
+  @media (max-width: 768px) {
+    .about-us-container {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .about-us-image {
+      padding-right: 0;
+      margin-bottom: 20px;
+    }
+  
+    .about-us-text {
+      max-width: 100%;
+    }
+  }
+  /* General reset and box sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+/* About page container with background image */
+.about-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  background-image: url('J:\3rdr react project\pro1\public\pexels-david-bartus-43782-963278.jpg'); /* Replace with the path to your image */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  animation: fadeIn 2s ease-in-out;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* About content */
+.about-content {
+  margin-top: 80px; /* Added margin to avoid overlap with fixed navbar */
+  width: 100%;
+  max-width: 1200px;
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  animation: slideUp 1.5s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.about-content h1 {
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  color: #333;
+  animation: fadeIn 2s ease-in-out;
+  text-align: center;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  width: 100%;
+}
+
+.about-item {
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-item h2 {
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: #333;
+}
+
+.about-item p {
+  font-size: 1em;
+  color: #666;
+  line-height: 1.6;
+}
+
+.about-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}

@@ -1,0 +1,223 @@
+/* General reset and box sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+/* Home page container with background image */
+.home-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  background-image: url('J:\3rdr react project\pro1\public\codioful-formerly-gradienta-LeG68PrXA6Y-unsplash.jpg'); /* Replace with the path to your image */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.hero {
+  background: url('J:\3rdr react project\pro1\public\pexels-camcasey-1687093.jpg');
+ 
+  color: white;
+  text-align: center;
+  padding: 50px 20px;
+ 
+  transition: transform 1.0s cubic-bezier(0.55, 0.3, 0.55, 3);
+}
+.hero img {
+  width:100%;
+}
+
+.hero :hover{
+transform: scale(1.2);
+}
+
+.hero h1 {
+  font-size: 3em;
+  margin: 0;
+  color: #f4fc13;
+}
+
+.hero p {
+  font-size: 1.2em;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Navbar styling */
+.navbar1 {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: rgba(51, 51, 51, 0.8); /* Semi-transparent */
+  color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.5em;
+  font-weight: bold;
+  animation: slideInLeft 1.5s ease-in-out;
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 15px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+  color: #333;
+  background-color: #fff;
+  border-radius: 5px;
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  display: block;
+  margin-top: 5px;
+  right: 0;
+  background: #fff;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a:focus::after {
+  width: 100%;
+  left: 0;
+  background: #333;
+}
+
+/* Landing content */
+.landing-content {
+  margin-top: 80px; /* Added margin to avoid overlap with fixed navbar */
+  width: 100%;
+  max-width: 1200px;
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  animation: slideUp 1.5s ease-in-out;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: center;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.landing-content h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #333;
+  animation: fadeIn 2s ease-in-out;
+  grid-column: 1 / -1; /* Make h1 span both columns */
+  text-align: center;
+}
+
+.landing-content p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #666;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.landing-content .content-left,
+.landing-content .content-right {
+  
+  padding: 20px;
+}
+
+.landing-content .content-left {
+  animation: slideInLeft 2s ease-in-out;
+}
+
+.landing-content .content-right {
+  animation: slideInRight 2s ease-in-out;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Add button styles with hover effects */
+button {
+  padding: 10px 20px;
+  font-size: 1em;
+  color: #fff;
+  background-color: #333;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background-color: #555;
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.95);
+}
