@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import './UserProfile.css';
 import Navbar2 from "./Navbar2";
+import Profile from "./Profile";
 
 const UserProfile = ({ userId, acceptedTasks }) => {
   const [userData, setUserData] = useState({
@@ -96,78 +97,7 @@ const UserProfile = ({ userId, acceptedTasks }) => {
     <Navbar2/>
     <div className="profile-container">
       <h1>Profile</h1>
-      <form onSubmit={handleSubmit} className="profile-form">
-        <div className="profile-picture">
-          <img
-            src={formData.profilePicture || 'https://via.placeholder.com/150'}
-            alt="Profile"
-            className="profile-picture-img"
-          />
-          {editMode && (
-            <input
-              type="file"
-              accept="image/*"
-              onChange={handleFileChange}
-              className="file-input"
-            />
-          )}
-        </div>
-        <div className="input-group">
-          <label htmlFor="name">Name</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            readOnly={!editMode}
-            />
-        </div>
-        <div className="input-group">
-          <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            readOnly={!editMode}
-          />
-        </div>
-        <div className="input-group">
-          <label htmlFor="mobile">Mobile No.</label>
-          <input
-            type="text"
-            id="mobile"
-            name="mobile"
-            value={formData.mobile}
-            onChange={handleChange}
-            readOnly={!editMode}
-          />
-        </div>
-        <div className="input-group">
-          <label htmlFor="address">Address</label>
-          <input
-            type="text"
-            id="address"
-            name="address"
-            value={formData.address}
-            onChange={handleChange}
-            readOnly={!editMode}
-          />
-        </div>
-        <div className="form-buttons">
-          {editMode ? (
-            <>
-              <button type="submit" className="save-button">Save</button>
-              <button type="button" className="cancel-button" onClick={() => setEditMode(false)}>Cancel</button>
-            </>
-          ) : (
-            <button type="button" className="edit-button" onClick={() => setEditMode(true)}>Edit</button>
-          )}
-          <button type="button" className="logout-button" onClick={handleLogout}>Logout</button>
-        </div>
-      </form>
+     <Profile/>
       
       {/* <div className="sessions-section">
         <h2>Sessions</h2>
@@ -233,7 +163,7 @@ const UserProfile = ({ userId, acceptedTasks }) => {
                   placeholder="Enter caption"
                   value={taskUpdates[task.id]?.caption || ''}
                   onChange={(e) => handleTaskUpdateChange(task.id, e)}
-                />
+                /> 
                 <button type="submit">Submit</button>
               </form>
             )}

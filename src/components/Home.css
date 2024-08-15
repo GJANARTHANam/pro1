@@ -18,7 +18,7 @@ body {
   align-items: center;
   min-height: 100vh;
   padding: 20px;
-  background-image: url('J:\3rdr react project\pro1\public\codioful-formerly-gradienta-LeG68PrXA6Y-unsplash.jpg'); /* Replace with the path to your image */
+  background-image: url('D:\pro1\public\codioful-formerly-gradienta-LeG68PrXA6Y-unsplash.jpg'); /* Replace with the path to your image */
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -26,7 +26,7 @@ body {
 }
 
 .hero {
-  background: url('J:\3rdr react project\pro1\public\pexels-camcasey-1687093.jpg');
+  background: url('D:\pro1\public\pexels-camcasey-1687093.jpg');
  
   color: white;
   text-align: center;
@@ -37,15 +37,15 @@ body {
 .hero img {
   width:100%;
 }
-
+/* 
 .hero :hover{
 transform: scale(1.2);
-}
+} */
 
 .hero h1 {
   font-size: 3em;
   margin: 0;
-  color: #f4fc13;
+  color: #0f0f03;
 }
 
 .hero p {

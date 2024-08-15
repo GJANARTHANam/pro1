@@ -1,61 +1,140 @@
-/* src/components/PublicTaskForm.css */
-.public-task-form {
-    max-width: 800px;
-    margin: auto;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    background: #f9f9f9;
-  }
+/* PublicTaskForm.css */
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  border-radius: 8px;
+  margin-top: 120px;
   
-  .public-task-form h1 {
-    margin-bottom: 20px;
-    text-align: center;
-    color: #333;
+  width: 35%; /* Reduced width */
+  max-width: 500px; /* Reduced max-width */
+  padding: 15px; /* Reduced padding */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position:relative;
+  animation: slideDown 0.4s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
   }
-  
-  .public-task-form label {
-    display: block;
-    margin-bottom: 15px;
-    font-weight: bold;
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
-  
-  .public-task-form input[type="text"],
-  .public-task-form textarea {
-    width: calc(100% - 20px);
-    padding: 10px;
-    border-radius: 4px;
-    border: 1px solid #ddd;
-    margin-top: 5px;
-  }
-  
-  .public-task-form textarea {
-    height: 100px;
-    resize: vertical;
-  }
-  
-  .public-task-form input[type="file"] {
-    margin-top: 5px;
-  }
-  
-  .public-task-form .map-container {
-    margin: 20px 0;
-  }
-  
-  .public-task-form button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-    background: #007bff;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-  
-  .public-task-form button:hover {
-    background: #0056b3;
-  }
-  
+}
+
+.close-button {
+  position: absolute;
+  top: 10px; /* Adjusted position */
+  right: 10px; /* Adjusted position */
+  background: none;
+  border: none;
+  font-size: 22px; /* Slightly smaller font size */
+  cursor: pointer;
+  color: #333;
+  transition: color 0.2s;
+}
+
+.close-button:hover {
+  color: #e74c3c;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 15px; /* Reduced margin */
+  font-size: 20px; /* Smaller font size */
+  color: #2c3e50;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Reduced gap */
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px; /* Reduced font size */
+  color: #34495e;
+}
+
+input[type="text"],
+textarea {
+  padding: 8px; /* Reduced padding */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.2s;
+  font-size: 13px; /* Reduced font size */
+}
+
+input[type="text"]:focus,
+textarea:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px; /* Reduced min-height */
+}
+
+input[type="file"] {
+  margin-top: 3px; /* Reduced margin */
+  font-size: 13px; /* Reduced font size */
+}
+
+.upload-progress {
+  margin-top: 5px;
+  background-color: #f3f3f3;
+  border-radius: 4px;
+  overflow: hidden;
+  height: 6px; /* Reduced height */
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #3498db;
+  transition: width 0.3s;
+}
+
+.map-container {
+  margin-top: 10px; /* Reduced margin */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+button[type="submit"] {
+  padding: 8px 12px; /* Reduced padding */
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px; /* Reduced font size */
+  transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: #2980b9;
+}
+
+button[type="submit"]:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}

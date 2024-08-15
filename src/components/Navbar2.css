@@ -1,0 +1,158 @@
+/* src/components/Navbar.css */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1e1e42;
+    margin-bottom: 50px;
+    padding: 10px 20px;
+  }
+  
+  .logo {
+    color: #ffff00;
+    font-size: 24px;
+    font-weight: bold;
+    position: relative;
+  }
+  
+  .logo .subtitle {
+    font-size: 10px;
+    font-weight: normal;
+    position: absolute;
+    top: 24px;
+    left: 0;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #ffcc00;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+  }
+  
+  .nav-links a:hover {
+    color: #ffcc00;
+  }
+  
+  .nav-links a:hover::after {
+    width: 100%;
+  }
+  
+  .search-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-input {
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .search-button {
+    background-color: #ffcc00;
+    border: none;
+    padding: 5px 10px;
+    margin-left: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .search-button:hover {
+    background-color: #e5b700;
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .social-icons a {
+    color: #000;
+    font-size: 18px;
+    text-decoration: none;
+    background-color: #fff;
+    margin-right: 20px;
+    border-radius: 50%;
+    padding: 5px;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .social-icons a:hover {
+    background-color: #ffcc00;
+    color: #fff;
+  }
+  
+  /* src/components/Navbar2.css */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333; /* Dark background to contrast with white underline */
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    color: #fff;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-links li {
+    margin: 0 15px;
+    position: relative; /* Required for absolute positioning of the underline */
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: #fff; /* Link color */
+    padding: 10px;
+    position: relative;
+  }
+  
+  .nav-links a.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px; /* Position the underline below the text */
+    width: 100%;
+    height: 2px; /* Thickness of the underline */
+    background-color: #fff; /* White underline */
+    border-radius: 2px; /* Optional: for rounded corners on the underline */
+  }
+  
+  .nav-links a:hover {
+    text-decoration: none; /* Ensure underline does not appear on hover if not active */
+  }
+  
+  

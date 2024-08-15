@@ -2,7 +2,7 @@ body {
   margin: 0;
   font-family: 'Arial', sans-serif;
   background-color: #f4f4f4;
-  background-image: url('J:/3rdr react project/pro1/public/codioful-formerly-gradienta-LeG68PrXA6Y-unsplash.jpg');
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxnwyN77hk6ZAFmJHHs4JHdFldcHMl1BOQyg&s');
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -28,16 +28,16 @@ body {
 }
 
 .hero {
-  background: url('J:/3rdr react project/pro1/public/pexels-camcasey-1687093.jpg') center/cover no-repeat;
-  color: white;
+  background: url('https://png.pngtree.com/thumb_back/fh260/back_our/20190621/ourmid/pngtree-atmospheric-silhouette-fight-crime-social-security-public-welfare-poster-background-material-image_182280.jpg') center/cover no-repeat;
+  color: orangered;
   text-align: center;
   padding: 100px 20px;
   transition: transform 1.0s cubic-bezier(0.55, 0.3, 0.55, 3);
 }
-
+/* 
 .hero:hover {
   transform: scale(1.2);
-}
+} */
 
 .hero h1 {
   font-size: 3em;
@@ -112,7 +112,7 @@ body {
 }
 
 .partner img {
-  width: 80px;
+  width: 160px;
   height: 80px;
   border-radius: 50%;
   margin-bottom: 10px;

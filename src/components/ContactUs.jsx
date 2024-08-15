@@ -1,66 +1,126 @@
-import React from 'react';
-import Navbar from './Navbar';
-import './ContactUs.css';
+// src/components/ContactUs.js
 
-function ContactUs() {
+import React, { useState } from 'react';
+import './ContactUs.css';
+import { FaUser, FaEnvelope, FaPhone} from 'react-icons/fa';
+import axios from 'axios';
+import Navbar from './Navbar';
+
+const Contact_us = () => {
+  const [formData, setFormData] = useState({
+    firstname: '',
+    lastname: '',
+    email: '',
+    phone: '',
+    description: ''
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
+    axios.post('http://localhost:3000/cont', formData)
+      .then(response => {
+        alert('Your message has been sent successfully!');
+        setFormData({
+          firstname: '',
+          lastname: '',
+          email: '',
+          phone: '',
+          description: ''
+        });
+      })
+      .catch(error => {
+        console.error('There was an error!', error);
+        alert('There was an error sending your message.');
+      });
+  };
+
   return (
     <div>
-      <Navbar />
-      <div className="contact-container">
-        <div className="contact-form">
-          <h2>Contact Us</h2>
-          <form>
-            <div className="form-group">
-              <label htmlFor="name">Full Name</label>
-              <input type="text" id="name" name="name" placeholder="Name" required />
+<Navbar/>
+    <div className="contact-us">
+      <div className="contact-form-container">
+        <div className="left-side">
+          <div className="branding">
+            <img src="logo.png" alt="Logo" className="logo" />
+            <p>Tether supports and empowers growing ventures and innovation as a digital token built on multiple blockchains.</p>
+          </div>
+          <div className="social-icons">
+            <a href="https://twitter.com"><i className="fa fa-twitter"></i></a>
+            <a href="https://linkedin.com"><i className="fa fa-linkedin"></i></a>
+            <a href="https://facebook.com"><i className="fa fa-facebook"></i></a>
+          </div>
+        </div>
+        <div className="right-side">
+          <h2>GET IN TOUCH</h2>
+          <p>24/7 We will answer your questions and problems</p>
+          <form className='cont' onSubmit={handleSubmit}>
+            <div className="input-group">
+              <FaUser className="icon" />
+              <input 
+                type="text" 
+                name="firstname"
+                placeholder="First Name" 
+                value={formData.firstname} 
+                onChange={handleChange} 
+                />
             </div>
-            <div className="form-group">
-              <label htmlFor="email">Email Address</label>
-              <input type="email" id="email" name="email" placeholder="Email" required />
+        
+            <div className="input-group">
+              <FaUser className="icon" />
+              <input 
+                type="text" 
+                name="lastname"
+                placeholder="Last Name" 
+                value={formData.lastname} 
+                onChange={handleChange} 
+              />
             </div>
-            <div className="form-group">
-              <label htmlFor="subject">Subject</label>
-              <input type="text" id="subject" name="subject" placeholder="Subject" required />
+            <div className="input-group">
+              <FaEnvelope className="icon" />
+              <input 
+                type="email" 
+                name="email"
+                placeholder="Email" 
+                value={formData.email} 
+                onChange={handleChange} 
+              />
             </div>
-            <div className="form-group">
-              <label htmlFor="message">Message</label>
-              <textarea id="message" name="message" placeholder="Message" required></textarea>
+            <div className="input-group">
+              <FaPhone className="icon" />
+              <input 
+                type="tel" 
+                name="phone"
+                placeholder="Phone" 
+                value={formData.phone} 
+                onChange={handleChange} 
+              />
             </div>
-            <button type="submit" className="submit-btn">Send Message</button>
+            <div className="input-group">
+              <textarea 
+                name="description"
+                placeholder="Describe your issue" 
+                value={formData.description} 
+                onChange={handleChange}
+              ></textarea>
+            </div>
+            <button type="submit" className='contbut'>
+              Send
+            </button>
           </form>
-        </div>
-        <div className="contact-map">
-          <iframe
-            title="Google Maps"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.0596125148164!2d76.95583241526092!3d11.016844592141697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba859cb2d1333ed%3A0xc77e7797e81a5d29!2sCoimbatore%2C%20Tamil%20Nadu%2C%20India!5e0!3m2!1sen!2sus!4v1633973968974!5m2!1sen!2sus"
-            width="100%"
-            height="100%"
-            style={{ border: 0 }}
-            allowFullScreen=""
-            loading="lazy"
-          ></iframe>
-        </div>
-      </div>
-      <div className="contact-info">
-        <div className="info-item">
-          <i className="fa fa-map-marker"></i>
-          <p>198 West 21th Street, Suite 721 New York NY 10016</p>
-        </div>
-        <div className="info-item">
-          <i className="fa fa-phone"></i>
-          <p>+ 1235 2355 98</p>
-        </div>
-        <div className="info-item">
-          <i className="fa fa-envelope"></i>
-          <p>info@yoursite.com</p>
-        </div>
-        <div className="info-item">
-          <i className="fa fa-globe"></i>
-          <p>yoursite.com</p>
         </div>
       </div>
     </div>
+                </div>
   );
-}
+};
 
-export default ContactUs;
+export default Contact_us;

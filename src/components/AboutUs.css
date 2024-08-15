@@ -1,172 +1,202 @@
 /* src/components/AboutUs.css */
 
-.about-us-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 60px;
-    background: linear-gradient(to right, #f0f4f8, #e2e8f0);
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    margin: 20px auto;
-    max-width: 1200px;
-  }
-  
-  .about-us-image {
-    flex: 1;
-    max-width: 50%;
-    padding-right: 20px;
-  }
-  
-  .about-us-image img {
-    width: 100%;
-    height: auto;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
-  }
-  
-  .about-us-image img:hover {
-    transform: scale(1.05);
-  }
-  
-  .about-us-text {
-    flex: 1;
-    max-width: 50%;
-  }
-  
-  .about-us-text h1 {
-    font-size: 3em;
-    color: #2d3748;
-    margin-bottom: 20px;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-  }
-  
-  .about-us-text p {
-    font-size: 1.2em;
-    line-height: 1.8em;
-    color: #4a5568;
-    margin-bottom: 20px;
-    padding-right: 20px;
-  }
-  
-  .about-us-text p:last-of-type {
-    margin-bottom: 0;
-  }
-  
-  @media (max-width: 768px) {
-    .about-us-container {
-      flex-direction: column;
-      text-align: center;
-    }
-  
-    .about-us-image {
-      padding-right: 0;
-      margin-bottom: 20px;
-    }
-  
-    .about-us-text {
-      max-width: 100%;
-    }
-  }
-  /* General reset and box sizing */
-* {
+/* General Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Navbar Styles */
+.navbar1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #333;
+  color: #fff;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f4f4f9;
-  color: #333;
+.nav-links li {
+  margin-left: 20px;
 }
 
-/* About page container with background image */
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* About Page Styles */
 .about-page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
-  padding: 20px;
-  background-image: url('J:\3rdr react project\pro1\public\pexels-david-bartus-43782-963278.jpg'); /* Replace with the path to your image */
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  animation: fadeIn 2s ease-in-out;
+  padding-top: 60px; /* Adjust for fixed navbar height */
 }
 
-/* Fade-in animation */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-/* About content */
 .about-content {
-  margin-top: 80px; /* Added margin to avoid overlap with fixed navbar */
-  width: 100%;
+  padding: 20px;
   max-width: 1200px;
-  padding: 40px;
-  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  animation: slideUp 1.5s ease-in-out;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  margin: auto;
 }
 
-@keyframes slideUp {
-  from {
-    transform: translateY(100%);
-  }
-  to {
-    transform: translateY(0);
-  }
-}
-
-.about-content h1 {
-  font-size: 2.5em;
-  margin-bottom: 40px;
-  color: #333;
-  animation: fadeIn 2s ease-in-out;
+h1 {
   text-align: center;
+  font-size: 36px;
+  margin-bottom: 40px;
 }
 
 .about-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 20px;
-  width: 100%;
+  margin-bottom: 40px;
 }
 
 .about-item {
+  background: #f4f4f4;
   padding: 20px;
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 10px;
+  border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .about-item h2 {
-  margin-bottom: 10px;
-  font-size: 1.5em;
-  color: #333;
+  font-size: 24px;
+  margin-top: 0;
 }
 
 .about-item p {
-  font-size: 1em;
-  color: #666;
+  font-size: 16px;
   line-height: 1.6;
 }
 
-.about-item:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* Contact Section Styles */
+.contact-section {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.contact-section h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.contact-section p {
+  font-size: 16px;
+}
+
+.contact-section a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.contact-section a:hover {
+  text-decoration: underline;
+}
+
+/* Testimonials Section Styles */
+.testimonials-section {
+  margin-top: 40px;
+}
+
+.testimonials-section h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.testimonials {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial {
+  margin-bottom: 20px;
+}
+
+.testimonial p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.testimonial span {
+  display: block;
+  font-style: italic;
+  color: #666;
+  margin-top: 5px;
+}
+
+/* Call-to-Action Section Styles */
+.cta-section {
+  background: #007bff;
+  color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.cta-section h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.cta-section p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.cta-button {
+  background: #fff;
+  color: #007bff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.cta-button:hover {
+  background: #e9ecef;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .navbar1 {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
 }

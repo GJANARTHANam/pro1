@@ -12,9 +12,17 @@ import Volunteer from './components/Volunteer';
 import ChatApp from './components/ChatApp';
 import './index.css';
 import ContactUs from './components/ContactUs';
+import AdminPage from './components/AdminPage';
+import VolunteerRequestForm from './components/VolunteerRequestForm';
+import  ContactUs1 from './components/ContactUs1';
+import  Forgetpass from './components/Forgetpass';
+import AdminMain from './components/AdminMain';
+import AdminTask from './components/AdminTask';
+import Dashboard from './components/Dashboard';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+
   const [userId, setUserId] = useState(null);
   const [acceptedTasks, setAcceptedTasks] = useState([]); // State to store accepted tasks
 
@@ -37,6 +45,13 @@ function App() {
           <Route path="/chatapp" element={<ChatApp />} />
           <Route path="/category/volunteers" element={<Volunteer onTaskAccept={handleTaskAccept} />} />
           <Route path="/contactus" element={<ContactUs />} />
+          <Route path="/adminpage" element={<AdminPage />} />
+          <Route path="/volunteerrequestform" element={<VolunteerRequestForm />} />
+          <Route path="/ContactUs1" element={<ContactUs1/>} />
+          <Route path="/Forgetpass" element={<Forgetpass/>} />
+          <Route path="/AdminMain" element={<AdminMain/>} />
+          <Route path="/AdminTask" element={<AdminTask/>} />
+          <Route path="/Dashboard" element={<Dashboard/>} />
           <Route
             path="/home"
             element={
